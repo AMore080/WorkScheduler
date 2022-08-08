@@ -1,38 +1,24 @@
+$(document).ready(function(){
 let day = document.getElementById("currentDay");
-let task = document.querySelector(".form-control")
-let save = document.querySelector(".btn")
-
-let taskArr = [];
-
 
 var today = moment().format("dddd, MMMM Do YYYY")
 $(day).text(today);
 
-function storeTasks(){
-    localStorage.setItem("task" , JSON.stringify(taskArr));
-}
 
-function init(){
-    let taskStor = JSON.parse(localStorage.getItem("taskArr"));
-
-    if(taskStor !== null){
-        task = taskStor;
-    }
-}
-
-save.addEventListener("click", function(event){
+$(".btn").click(function(event){
     console.log("functioning");
     event.preventDefault();
 
-    var taskText = task.value
+    let taskText = $(this).siblings(".form-control").val();
 
     if(taskText === ""){
         return;
     }
 
-    taskArr.push(taskText);
-
-    storeTasks();
+    localStorage.setItem("time", taskText);
 })
 
-init()
+$('#9am .form-control').val(localStorage.getItem("09"));
+$('#11am .form-control').val(localStorage.getItem("11"))
+
+});
