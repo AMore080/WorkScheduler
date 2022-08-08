@@ -29,7 +29,7 @@ $(".btn").click(function(event){
 $('#9am .form-control').val(localStorage.getItem("9"));
 $('#10am .form-control').val(localStorage.getItem("10"));
 $('#11am .form-control').val(localStorage.getItem("11"));
-$('#12pm .form-control').val(localStorage.getItem("12"));
+$('#12am .form-control').val(localStorage.getItem("12"));
 $('#1pm .form-control').val(localStorage.getItem("13"));
 $('#2pm .form-control').val(localStorage.getItem("14"));
 $('#3pm .form-control').val(localStorage.getItem("15"));
